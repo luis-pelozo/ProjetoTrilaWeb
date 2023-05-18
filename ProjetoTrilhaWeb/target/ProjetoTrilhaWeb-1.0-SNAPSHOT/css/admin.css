@@ -104,6 +104,12 @@ footer{
     text-align: center;
     padding: 10px;
 }
+/*********** MODAIS ***********/
+
+
+#modalAviso{
+    display: none;
+}
 
 /*********** Layout CRUDS ***********/
 
