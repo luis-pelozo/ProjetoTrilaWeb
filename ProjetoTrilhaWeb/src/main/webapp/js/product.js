@@ -4,13 +4,25 @@ $(document).ready(function (){
 
     //Carrega as marcas registradas no BD no select do formulario de inserir
     COLDIGO.produto.carregarMarcas = function (){
+        alert("tentando buscar marcas");
         $.ajax({
            type: "GET",
            url: "/ProjetoTrilhaWeb/rest/marca/buscar",
-            success: function (){
+            success: function (marcas){
+               alert("Sucesso");
             },
-            error: function (){
+            error: function (info){
+               alert("Erro");
+               COLDIGO.exibirAviso("Erro ao buscar as marcas: "+info.status + " - "+ info.statusText);
+
+               $("#selMarca").html("");
+               var option = document.createElement("option");
+               option.setAttribute("value","");
+               option.innerHTML = ("Erro ao carregar marcas!");
+               $("#selMarca").append(option);
+               $("#selMarca").addClass("aviso");
             }
         });
     }
+    COLDIGO.produto.carregarMarcas();
 });
