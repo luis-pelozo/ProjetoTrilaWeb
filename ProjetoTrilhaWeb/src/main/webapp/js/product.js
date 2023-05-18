@@ -1,3 +1,5 @@
+//Teste de update
+
 COLDIGO.produto = new Object();
 
 $(document).ready(function (){
